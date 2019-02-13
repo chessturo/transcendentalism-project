@@ -2,12 +2,48 @@
 <html>
   <head>
     <title>Transcendentalism</title>
+    <link href="https://fonts.googleapis.com/css?family=Cormorant:300i,400,700" rel="stylesheet">
     <style>
-      body { margin: 0; padding: 0; overflow: hidden; }
-      canvas { width: 100%; height: 100%; }
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: black;
+        user-select: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+      }
+      canvas {
+        width: 100%;
+        height: 100%;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        text-align: center;
+      }
+      a, a:visited {
+        text-decoration: underline;
+        font-weight: bold;
+        color: white;
+      }
+      #textContainer {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background-color: black;
+        color: white;
+        display: none;
+        opacity: 1;
+        transition: opacity 250ms;
+      }
+      #textContainer.fade {
+        opacity: 0;
+      }
     </style>
   </head>
   <body>
+    <div id="textContainer" class="fade"></div>
     <script src="/home/mitchell/dev/transcendentalism-project/node_modules/three/build/three.min.js"></script>
     <script src="/home/mitchell/dev/transcendentalism-project/node_modules/three/examples/js/controls/OrbitControls.js"></script>
     <script src="index.js"></script>
