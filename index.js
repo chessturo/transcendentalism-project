@@ -4,6 +4,7 @@ document.body.appendChild(renderer.domElement);
 
 let currentAnimationFrame;
 
+let scene, camera;
 function i1() {
   camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
   var controls = new THREE.OrbitControls(camera);
@@ -31,6 +32,7 @@ function render() {
   currentAnimationFrame = requestAnimationFrame(render);
 }
 
+i1();
 currentAnimationFrame = requestAnimationFrame(render);
 
 let currentSlide = 0;
