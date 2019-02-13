@@ -1,37 +1,44 @@
-let camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-var controls = new THREE.OrbitControls(camera);
-
 let renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-let geometry = new THREE.BoxGeometry(1, 1, 1);
-var light = new THREE.PointLight();
-let lightSphere = new THREE.Mesh(new THREE.SphereGeometry(0.1, 32, 32), new THREE.MeshBasicMaterial({ color: 0xffffff }));
-light.position.set(5, 5, 5);
-lightSphere.position.set(5, 5, 5);
+let currentAnimationFrame;
 
-let ambientLight = new THREE.AmbientLight( 0x404040 );
+function i1() {
+  camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+  var controls = new THREE.OrbitControls(camera);
+  controls.enableZoom = false;
+  controls.enablePan = false;
 
-let scene = new THREE.Scene();
-let materia1 = new THREE.MeshLambertMaterial({ color: 0x00ff00 });
-let cube = new THREE.Mesh(geometry, materia1);
-scene.add(cube);
-scene.add(light);
-scene.add(lightSphere);
-scene.add(ambientLight);
+  var driveway = new THREE.TextureLoader().load('driveway.jpg');
+  let photoSphere = new THREE.Mesh(
+    new THREE.SphereGeometry(1, 32, 32),
+    new THREE.MeshBasicMaterial({ map: driveway })
+  );
+  photoSphere.material.side = THREE.BackSide;
+  photoSphere.scale.x = -1;
 
-camera.position.z = 10;
+  scene = new THREE.Scene();
+  scene.add(photoSphere);
 
-let start = Date.now();
-
-let animate1 = function() {
-  cube.rotation.x += 0.01;
-  cube.rotation.y += 0.01;
-
-  renderer.render(scene, camera);
-
-  requestAnimationFrame(animate1);
+  photoSphere.position.set(0, 0, 0);
+  camera.position.set(0, 0, 0.0001);
+  controls.update();
 }
 
-requestAnimationFrame(animate1);
+function render() {
+  renderer.render(scene, camera);
+  currentAnimationFrame = requestAnimationFrame(render);
+}
+
+currentAnimationFrame = requestAnimationFrame(render);
+
+let currentSlide = 0;
+
+document.addEventListener('keydown', (event) => {
+  console.log(`key!`);
+  if (event.keyCode == 32) {
+    cancelAnimationFrame(currentAnimationFrame);
+    console.log(`spacebar!`);
+  }
+})
