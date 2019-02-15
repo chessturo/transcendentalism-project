@@ -111,7 +111,7 @@ async function transcendIntro3() {
 
 async function transcendIntroDemo() {
   div.innerHTML = textSlideOpen + " \
-    One simple example of how our minds alters our experience is looking at how our brains mask our eye's blind spot. <br /> \
+    One simple example of how our minds alter our experience is looking at how our brains mask our eye's blind spot. <br /> \
     To demonstrate: <br /> \
     1) Hold your right thumb out at arm's length. <br /> \
     2) Put the tip of your thumb directly beneath the dot on your screen. <br /> \
@@ -135,15 +135,48 @@ async function transcendIntro4() {
     Indeed, Emerson wrote that, \"we are now so far from the road to truth, that religious teachers dispute and hate each other, and speculative men are esteemed unsound and frivolous\" (Emerson 215). <br /><br /> \
     Much of Transcendentalist writing seems to focus on solving this problem, with Emerson's Nature attempting to take its reader on a journey to inquire, \"to what end is nature?\" (Emerson 215). \
     As Transcendental philosophy hinges on the idea of individual experience, the writings produced by this movement are often experiences in themselves, rather than prescriptive guides on living life, which would run counter to many of the movement's ideals. \
+    In order to better understand how Transcendentalist writers achieved this goal, let's examine some passages by prominent Transcendentalist writer Ralph Waldo Emerson. \
   " + textSlideClose;
   div.style.cssText = "display: flex; align-items: center;";
   await sleep(50);
   div.classList.toggle("fade");
 }
 
-async function stars() {
+async function stars1() {
   div.innerHTML = textSlideOpen + " \
-    Emerson said something about stars. That's pretty cool. \
+    \"If the stars should appear one night in a thousand years, how would men believe and adore; \
+    and preserve for many generations the remembrance of the city of God which had been shown! \
+    But every night come out these preachers of beauty, and light the universe with their admonishing smile\" (Emerson 215).  \
+  " + textSlideClose;
+  div.style.cssText = "display: flex; align-items: center;";
+  await sleep(50);
+  div.classList.toggle("fade");
+}
+
+async function stars2() {
+  div.innerHTML = textSlideOpen + " \
+    Here, Emerson contrasts how people tend to devalue the common, and how beauty imparts an intrinsic value. \
+    He begins by writing that if the stars appeared only once per millenium, \"men [would] believe and adore.\" \
+    The comparison here is is implicit; because most people do not often marvel at the stars, mostly due to them appearing each night, Emerson creates a world where the stars do not appear each night. \
+    In this world, one would view the stars at their actual value rather than overlooking them because they appear every night. \
+    Since Emerson's goal is to convince people to \"reconnect\" with nature, reminding them of the beauty of the stars helps people reevaluate their detachment from the beauty around them. <br /><br /> \
+    Emerson goes on to personify the stars themselves, saying that they are, \"preachers of beauty,\" and that they have an, \"admonishing smile.\" \
+    This personification helps to subtly reemphasize Emerson's message of \"connecting\" with nature rather than looking at it as a static object. \
+    Additionally, characterizing the stars as, \"preachers,\" helps to reassert the semi-deification of nature that is central to Transcendental philosophy. \
+  " + textSlideClose;
+  div.style.cssText = "display: flex; align-items: center;";
+  await sleep(50);
+  div.classList.toggle("fade");
+}
+
+async function stars3() {
+  div.innerHTML = textSlideOpen + " \
+    Personally, this passage really made me think about how I frequently overlook the beautiful things around me. \
+    I honestly think that reading this passage has helped to make me a more thoughtful person, one who better keeps in mind that which is around me. \
+    To help demonstrate, this next slide is the view I walk past to get to my car each morning; \
+    after reading this passage, I realized that I'd been overlooking the beauty of this short walk down my driveway each morning, simply because I did it every day. \
+    Be sure to drag with your mouse to have a look around! \
+    (Please note: the next slide may take a moment to load, as the image is about 9.2MB in size). \
   " + textSlideClose;
   div.style.cssText = "display: flex; align-items: center;";
   await sleep(50);
@@ -179,8 +212,11 @@ let slides = [
   [transcendIntroDemo, false],
   [transcendIntro4, false],
 
-  [stars, false],
+  [stars1, false],
+  [stars2, false],
+  [stars3, false],
   [drivewaySphere, true],
+
   [credits, false]
 ];
 
