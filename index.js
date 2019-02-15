@@ -183,11 +183,145 @@ async function stars3() {
   div.classList.toggle("fade");
 }
 
+async function language1() {
+  div.innerHTML = textSlideOpen + " \
+    Beyond writing about how we should respect nature for its beauty, Emerson also wrote that nature provides a connection between itself and our emotions. \
+    Emerson wrote, \"Every appearance in nature corresponds to some state of the mind, and that state of the mind can only be described by presenting that natural appearance as its picture ... \
+    [man] is placed in the centre of beings, and a ray of relation passes from every other being to him\" (Emerson 223). \
+  " + textSlideClose;
+  div.style.cssText = "display: flex; align-items: center;";
+  await sleep(50);
+  div.classList.toggle("fade");
+}
+
+async function language2() {
+  div.innerHTML = textSlideOpen + " \
+    In order to help explain what Emerson has wrote, I’d like to introduce a small puzzle. \
+    It’s very simple, just click the button whose color corresponds to the color of the text. \
+    For example, if you were to see green, you’d click the button colored red. <br /><br /> \
+    After you are done, just press spacebar to continue. \
+  " + textSlideClose;
+  div.style.cssText = "display: flex; align-items: center;";
+  await sleep(50);
+  div.classList.toggle("fade");
+}
+
+let colors = [['red', '#C90E0E'], ['green', '#04BA0F'], ['blue', '#00BEA0'], ['orange', '#CE8515'], ['purple', '#A400D2']];
+let score = 0;
+let possible = 0;
+
+async function language3() {
+  let colorNum = Math.floor(Math.random() * 5); //Which color the text is
+  let textNum = Math.floor(Math.random() * 5); //Which word is used
+  let sideOfWrongButton = Math.round(Math.random()); //If this == 0, the wrong button is on the left, if it's 1, the wrong button is on the right
+  while (colorNum == textNum) {
+    textNum = Math.floor(Math.random() * 5);
+  }
+
+  let leftButtonColor = (function() {
+    //If the wrong button is on the left (i.e., it's this button)
+    if (sideOfWrongButton == 0) {
+      return colors[textNum][1];
+    } else {
+      return colors[colorNum][1];
+    }
+  })();
+
+  let leftButtonOnClick = (function() {
+    if (sideOfWrongButton == 0) {
+      return "language3Update(false);";
+    } else {
+      return "language3Update(true);";
+    }
+  })();
+
+  let rightButtonColor = (function() {
+    //If the wrong button is on the right (i.e., it's this button)
+    if (sideOfWrongButton == 1) {
+      return colors[textNum][1];
+    } else {
+      return colors[colorNum][1];
+    }
+  })();
+
+  let rightButtonOnClick = (function() {
+    if (sideOfWrongButton == 1) {
+      return "language3Update(false);";
+    } else {
+      return "language3Update(true);";
+    }
+  })();
+
+  div.innerHTML = "\
+    <div style=\"font-size: 10vh; text-align: center; margin-left: auto; margin-right: auto; color: " + colors[colorNum][1] + "\">" + colors[textNum][0] + "</div> \
+    <button style=\"padding: 0; width: 50vw; height: 10vh; float: left; background-color: " + leftButtonColor + "\" onclick=\"" + leftButtonOnClick + "\"></button> \
+    <button style=\"padding: 0; width: 50vw; height: 10vh; float: right; background-color: " + rightButtonColor+ "\" onclick=\"" + rightButtonOnClick + "\"></button> \
+    <p style='font-family: \"Cormorant\", serif; font-weight: 300; font-size: 5vh; margin: 0;'>Score: 0/0</p> \
+  ";
+  div.style.cssText = "display: block; align-items: center;";
+  await sleep(50);
+  div.classList.toggle("fade");
+}
+
+async function language3Update(correct) {
+  if (correct) {
+    score += 1;
+  }
+  possible += 1;
+
+  let colorNum = Math.floor(Math.random() * 5); //Which color the text is
+  let textNum = Math.floor(Math.random() * 5); //Which word is used
+  let sideOfWrongButton = Math.round(Math.random()); //If this == 0, the wrong button is on the left, if it's 1, the wrong button is on the right
+  while (colorNum == textNum) {
+    textNum = Math.floor(Math.random() * 5);
+  }
+
+  let leftButtonColor = (function() {
+    //If the wrong button is on the left (i.e., it's this button)
+    if (sideOfWrongButton == 0) {
+      return colors[textNum][1];
+    } else {
+      return colors[colorNum][1];
+    }
+  })();
+
+  let leftButtonOnClick = (function() {
+    if (sideOfWrongButton == 0) {
+      return "language3Update(false);";
+    } else {
+      return "language3Update(true);";
+    }
+  })();
+
+  let rightButtonColor = (function() {
+    //If the wrong button is on the right (i.e., it's this button)
+    if (sideOfWrongButton == 1) {
+      return colors[textNum][1];
+    } else {
+      return colors[colorNum][1];
+    }
+  })();
+
+  let rightButtonOnClick = (function() {
+    if (sideOfWrongButton == 1) {
+      return "language3Update(false);";
+    } else {
+      return "language3Update(true);";
+    }
+  })();
+
+  div.innerHTML = "\
+    <div style=\"font-size: 10vh; text-align: center; margin-left: auto; margin-right: auto; color: " + colors[colorNum][1] + "\">" + colors[textNum][0] + "</div> \
+    <button style=\"padding: 0; width: 50vw; height: 10vh; float: left; background-color: " + leftButtonColor + "\" onclick=\"" + leftButtonOnClick + "\"></button> \
+    <button style=\"padding: 0; width: 50vw; height: 10vh; float: right; background-color: " + rightButtonColor+ "\" onclick=\"" + rightButtonOnClick + "\"></button> \
+    <div style=\"width: 100vw\"><p style='font-family: \"Cormorant\", serif; font-weight: 300; font-size: 5vh; margin: 0;'>Score: " + score + "/" + possible + "</p></div> \
+  ";
+}
+
 async function credits() {
   div.innerHTML = textSlideOpen + " \
     Built using the amazing <a href=\"https://threejs.org/\">Threejs</a> library <br /><br /> \
     This fancy font is Cormorant, which can be found <a href=\"https://fonts.google.com/specimen/Cormorant\">here</a> <br /><br /> \
-    Lorem ipsum dolor sit amet, consectetur adipiscing elio. Phasellus vel erat in libero consectetur feugiat nec vel magna. Cras bibendum ante ac arcu tempor molestie. Etiam a pellentesque turpis, ut commodo sapien. Nulla tincidunt vestibulum dui, at consectetur turpis ultricies in. Nullam sollicitudin porta urna, eu tristique risus fermentum porttitor. Suspendisse diam risus, porta ac placerat eget, accumsan nec eros. Vestibulum aliquet nibh est, et ultrices turpis imperdiet eget. In porttitor mi ac turpis dapibus aliquet. <br /><br /> \
   " + textSlideClose;
   div.style.cssText = "display: flex; align-items: center;";
   await sleep(50);
@@ -216,6 +350,10 @@ let slides = [
   [stars2, false],
   [stars3, false],
   [drivewaySphere, true],
+
+  [language1, false],
+  [language2, false],
+  [language3, false],
 
   [credits, false]
 ];
