@@ -332,11 +332,24 @@ async function language4() {
 
 async function language5() {
   div.innerHTML = textSlideOpen + " \
-  However, as Emerson notes, this game represents an incomplete example, as, \"it is not words only that are emblematic; it is things which are emblematic.\" \
-  While more complicated, the idea of, \"things,\" being emblematic is built on the same principle as words. \
-  Just as the lines that make up the word \"red\" do not have any inherit meaning, yet they create the idea of <span style=\"color:#C90E0E\">red</span> in your mind, Emerson claims that the \"things\" themselves, \"have no value\" (224) on their own, but when they are connected to an idea or a person, they gain a meaning separate from the literal one.  \
-  This is what makes nature valuable as an interpreter; it allows one to simply and succinctly conjure complex ideas in the minds of an audience. \
-  Just as it would be near impossible to describe <span style=\"color:#C90E0E\">red</span> without the word \"red,\" many ideas such as nuanced, \"subtle spite\" (Emerson 223), would be difficult to accurately communicate without the connection to the natural \"thing\" that is a snake. \
+    However, as Emerson notes, this game represents an incomplete example, as, \"it is not words only that are emblematic; it is things which are emblematic.\" \
+    While more complicated, the idea of, \"things,\" being emblematic is built on the same principle as words. \
+    Just as the lines that make up the word \"red\" do not have any inherit meaning, yet they create the idea of <span style=\"color:#C90E0E\">red</span> in your mind, Emerson claims that the \"things\" themselves, \"have no value\" (224) on their own, but when they are connected to an idea or a person, they gain a meaning separate from the literal one.  \
+    This is what makes nature valuable as an interpreter; it allows one to simply and succinctly conjure complex ideas in the minds of an audience. \
+    Just as it would be near impossible to describe <span style=\"color:#C90E0E\">red</span> without the word \"red,\" many ideas such as nuanced, \"subtle spite\" (Emerson 223), would be difficult to accurately communicate without the connection to the natural \"thing\" that is a snake. \
+  " + textSlideClose;
+  div.style.cssText = "display: flex; align-items: center;";
+  await sleep(50);
+  div.classList.toggle("fade");
+}
+
+async function language6() {
+  div.innerHTML = textSlideOpen + " \
+    Being able to connect with an audience is a skill set that I try to practice everyday. \
+    As a speech and debate competitor, being able to clearly communicate my ideas is crucial. \
+    Additionally, I'd like to go into software development after I graduate, and user interface can make or break your app. \
+    Good design is often about being able to communicate the function of something quickly and seamlessly, and one of the ways this happens is by making your design similar to something your user will already be familiar with. \
+    As such, being able to competently model your designs off of nature can be a huge asset, because the experience of nature is one that is truly universal.
   " + textSlideClose;
   div.style.cssText = "display: flex; align-items: center;";
   await sleep(50);
@@ -347,6 +360,7 @@ async function credits() {
   div.innerHTML = textSlideOpen + " \
     Built using the amazing <a href=\"https://threejs.org/\">Threejs</a> library <br /><br /> \
     This fancy font is Cormorant, which can be found <a href=\"https://fonts.google.com/specimen/Cormorant\">here</a> <br /><br /> \
+    Full Works Cited can be found at the end of <a href=\"/transcendentalism.pdf\">this PDF</a>, or the one I gave you in person. \
   " + textSlideClose;
   div.style.cssText = "display: flex; align-items: center;";
   await sleep(50);
