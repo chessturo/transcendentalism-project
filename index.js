@@ -196,9 +196,9 @@ async function language1() {
 
 async function language2() {
   div.innerHTML = textSlideOpen + " \
-    In order to help explain what Emerson has wrote, I’d like to introduce a small puzzle. \
-    It’s very simple, just click the button whose color corresponds to the color of the text. \
-    For example, if you were to see green, you’d click the button colored red. <br /><br /> \
+    In order to help explain what Emerson has wrote, I'd like to introduce a small puzzle. \
+    It's very simple, just click the button whose color corresponds to the color of the text. \
+    For example, if you were to see green, you'd click the button colored red. <br /><br /> \
     After you are done, just press spacebar to continue. \
   " + textSlideClose;
   div.style.cssText = "display: flex; align-items: center;";
