@@ -349,7 +349,7 @@ async function language6() {
     As a speech and debate competitor, being able to clearly communicate my ideas is crucial. \
     Additionally, I'd like to go into software development after I graduate, and user interface can make or break your app. \
     Good design is often about being able to communicate the function of something quickly and seamlessly, and one of the ways this happens is by making your design similar to something your user will already be familiar with. \
-    As such, being able to competently model your designs off of nature can be a huge asset, because the experience of nature is one that is truly universal.
+    As such, being able to competently model your designs off of nature can be a huge asset, because the experience of nature is one that is truly universal. \
   " + textSlideClose;
   div.style.cssText = "display: flex; align-items: center;";
   await sleep(50);
