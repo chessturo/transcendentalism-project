@@ -186,8 +186,9 @@ async function stars3() {
 async function language1() {
   div.innerHTML = textSlideOpen + " \
     Beyond writing about how we should respect nature for its beauty, Emerson also wrote that nature provides a connection between itself and our emotions. \
-    Emerson wrote, \"Every appearance in nature corresponds to some state of the mind, and that state of the mind can only be described by presenting that natural appearance as its picture ... \
-    [man] is placed in the centre of beings, and a ray of relation passes from every other being to him\" (Emerson 223). \
+    Emerson wrote, \"Every word which is used to express a moral or intellectual fact, if traced to its root, is found to be borrowed from some material appearance, ... \
+    [and] it is not words only that are emblematic; it is things which are emblematic. ... \
+    Thus is nature an interpreter, by hose means man converses with his fellow men\" (Emerson 223-224). \
   " + textSlideClose;
   div.style.cssText = "display: flex; align-items: center;";
   await sleep(50);
@@ -196,9 +197,9 @@ async function language1() {
 
 async function language2() {
   div.innerHTML = textSlideOpen + " \
-    In order to help explain what Emerson has wrote, I'd like to introduce a small puzzle. \
-    It's very simple, just click the button whose color corresponds to the color of the text. \
-    For example, if you were to see green, you'd click the button colored red. <br /><br /> \
+    In order to help explain what Emerson has wrote, I'd like to introduce a small puzzle/game. \
+    The rules are simple, just click the button whose color corresponds to the color of the text as quickly as possible. \
+    For example, if you were to see <span style=\"color:#C90E0E\">green</span>, you'd click the button colored <span style=\"color:#C90E0E\">red</span>. <br /><br /> \
     After you are done, just press spacebar to continue. \
   " + textSlideClose;
   div.style.cssText = "display: flex; align-items: center;";
@@ -318,6 +319,30 @@ async function language3Update(correct) {
   ";
 }
 
+async function language4() {
+  div.innerHTML = textSlideOpen + " \
+    Like before, this game helps to act as a simple example of what Emerson explained in his passage. \
+    When nature is acting as an, \"interpreter,\" it conjures images in the mind of the audience. \
+    The game highlights this image by creating confusion, as the color in one's mind, which is created by the word, does not match the color of the text on one's screen. \
+  " + textSlideClose;
+  div.style.cssText = "display: flex; align-items: center;";
+  await sleep(50);
+  div.classList.toggle("fade");
+}
+
+async function language5() {
+  div.innerHTML = textSlideOpen + " \
+  However, as Emerson notes, this game represents an incomplete example, as, \"it is not words only that are emblematic; it is things which are emblematic.\" \
+  While more complicated, the idea of, \"things,\" being emblematic is built on the same principle as words. \
+  Just as the lines that make up the word \"red\" do not have any inherit meaning, yet they create the idea of <span style=\"color:#C90E0E\">red</span> in your mind, Emerson claims that the \"things\" themselves, \"have no value\" (224) on their own, but when they are connected to an idea or a person, they gain a meaning separate from the literal one.  \
+  This is what makes nature valuable as an interpreter; it allows one to simply and succinctly conjure complex ideas in the minds of an audience. \
+  Just as it would be near impossible to describe <span style=\"color:#C90E0E\">red</span> without the word \"red,\" many ideas such as nuanced, \"subtle spite\" (Emerson 223), would be difficult to accurately communicate without the connection to the natural \"thing\" that is a snake. \
+  " + textSlideClose;
+  div.style.cssText = "display: flex; align-items: center;";
+  await sleep(50);
+  div.classList.toggle("fade");
+}
+
 async function credits() {
   div.innerHTML = textSlideOpen + " \
     Built using the amazing <a href=\"https://threejs.org/\">Threejs</a> library <br /><br /> \
@@ -354,6 +379,8 @@ let slides = [
   [language1, false],
   [language2, false],
   [language3, false],
+  [language4, false],
+  [language5, false],
 
   [credits, false]
 ];
