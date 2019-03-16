@@ -360,7 +360,7 @@ async function credits() {
   div.innerHTML = textSlideOpen + " \
     Built using the amazing <a href=\"https://threejs.org/\">Threejs</a> library <br /><br /> \
     This fancy font is Cormorant, which can be found <a href=\"https://fonts.google.com/specimen/Cormorant\">here</a> <br /><br /> \
-    Full Works Cited can be found at the end of <a href=\"/project.pdf\">this PDF</a>, or the one I gave you in person. \
+    Full Works Cited can be found at the end of <a href=\"/transcendentalism-project/project.pdf\">this PDF</a>, or the one I gave you in person. \
   " + textSlideClose;
   div.style.cssText = "display: flex; align-items: center;";
   await sleep(50);
